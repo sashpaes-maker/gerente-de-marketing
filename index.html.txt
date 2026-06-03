@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ashley Paes da Silva | Portfólio de Marketing B2B</title>
+    <title>Ashley Paes | Portfólio de Marketing B2B</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts: Inter para legibilidade e tom corporativo limpo -->
@@ -70,7 +70,7 @@
                 </div>
                 
                 <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
-                    Ashley Paes da Silva
+                    Ashley Paes
                 </h1>
                 
                 <p class="text-lg sm:text-xl font-medium text-blue-400 max-w-3xl">
@@ -98,7 +98,7 @@
                     <div class="relative bg-slate-900 p-4 rounded-2xl border border-white/10 shadow-2xl">
                         <div class="aspect-square w-full rounded-xl overflow-hidden bg-slate-800 border border-white/20 relative">
                             <!-- Foto da Ashley Paes - Apontando para o arquivo local no GitHub -->
-                            <img src="foto-ashley.jpg" alt="Ashley Paes da Silva" class="w-full h-full object-cover" id="avatar-img" onerror="showFallbackSvg()">
+                            <img src="foto-ashley.jpg" alt="Ashley Paes" class="w-full h-full object-cover" id="avatar-img" onerror="showFallbackSvg()">
                             <div id="svg-avatar" class="hidden absolute inset-0 flex items-center justify-center bg-gradient-to-br from-slate-800 to-slate-950 p-8">
                                 <svg viewBox="0 0 24 24" fill="none" class="w-full h-full text-blue-300" stroke="currentColor" stroke-width="0.5">
                                     <circle cx="12" cy="8" r="4" fill="rgba(59,130,246,0.3)"/>
@@ -107,7 +107,7 @@
                             </div>
                         </div>
                         <div class="mt-4 text-center">
-                            <h3 class="text-base font-bold text-white tracking-wide">Ashley Paes da Silva</h3>
+                            <h3 class="text-base font-bold text-white tracking-wide">Ashley Paes</h3>
                             <p class="text-xs text-blue-400 font-medium">Gerente de Marketing</p>
                             <div class="mt-3 flex justify-center text-slate-400">
                                 <a href="https://www.linkedin.com/in/ashley-paes/" target="_blank" class="hover:text-white transition text-2xl" aria-label="LinkedIn Profissional">
