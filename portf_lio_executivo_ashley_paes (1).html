@@ -1,0 +1,435 @@
+Aqui está o código completo do seu arquivo `index.html`. Ele foi estruturado em um único arquivo (HTML com CSS embutido) para facilitar o processo de cópia e colagem.
+
+O código contém o seu texto de apresentação exatamente como enviado, o cargo ajustado, o link correto do seu LinkedIn com a remoção do e-mail, a imagem apontando para `foto-ashley.jpg` com um fallback visual elegante em SVG, e os 3 cases de sucesso detalhados com foco em dados e scannabilidade executiva.
+
+Crie um arquivo chamado **`index.html`** no seu computador, cole o código abaixo dentro dele e salve.
+
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ashley Paes - Portfólio de Marketing</title>
+    <style>
+        :root {
+            --bg-primary: #f8fafc;
+            --bg-card: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --accent-color: #2563eb;
+            --accent-hover: #1d4ed8;
+            --border-color: #e2e8f0;
+            --success-color: #059669;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1040px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 40px;
+        }
+
+        /* Sidebar / Perfil */
+        .sidebar {
+            position: sticky;
+            top: 40px;
+            height: fit-content;
+        }
+
+        .profile-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .profile-img-container {
+            width: 140px;
+            height: 140px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            overflow: hidden;
+            background: #e2e8f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 3px solid var(--border-color);
+        }
+
+        .profile-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-avatar-fallback {
+            width: 60px;
+            height: 60px;
+            fill: var(--text-muted);
+        }
+
+        .profile-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 4px;
+        }
+
+        .profile-title {
+            font-size: 1rem;
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 24px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+        }
+
+        .social-icon {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .social-icon:hover {
+            color: var(--accent-color);
+        }
+
+        .social-icon svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        /* Conteúdo Principal */
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .about-section {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .about-section p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        .about-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        /* Cards de Cases */
+        .case-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            margin-bottom: 32px;
+        }
+
+        .case-header {
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 20px;
+            margin-bottom: 24px;
+        }
+
+        .case-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 6px;
+        }
+
+        .case-objective {
+            font-size: 1rem;
+            color: var(--accent-color);
+            font-weight: 500;
+        }
+
+        .case-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+
+        .block-title {
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 8px;
+        }
+
+        .challenge-block .block-title { color: #b91c1c; }
+        .solution-block .block-title { color: #1e3a8a; }
+        .results-block .block-title { color: var(--success-color); }
+
+        .block-text {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        .solution-list {
+            list-style-position: inside;
+            padding-left: 5px;
+            color: var(--text-muted);
+        }
+
+        .solution-list li {
+            margin-bottom: 6px;
+        }
+
+        /* Grid de Resultados Numéricos */
+        .results-highlight-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-radius: 12px;
+            padding: 24px;
+        }
+
+        .result-stat-card {
+            text-align: center;
+        }
+
+        .result-number {
+            font-size: 2.25rem;
+            font-weight: 800;
+            color: var(--success-color);
+            margin-bottom: 4px;
+        }
+
+        .result-label {
+            font-size: 0.9rem;
+            color: #14532d;
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        /* Responsividade */
+        @media (max-width: 868px) {
+            .container {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+            .sidebar {
+                position: relative;
+                top: 0;
+            }
+            body {
+                padding: 20px 12px;
+            }
+            .case-card, .about-section {
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- Sidebar Perfil -->
+        <aside class="sidebar">
+            <div class="profile-card">
+                <div class="profile-img-container">
+                    <!-- Substitui automaticamente por fallback caso a imagem falte ou quebre -->
+                    <img src="foto-ashley.jpg" alt="Ashley Paes" onerror="this.style.display='none'; document.getElementById('fallback-avatar').style.display='block';">
+                    <svg id="fallback-avatar" class="profile-avatar-fallback" style="display:none;" viewBox="0 0 24 24">
+                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                    </svg>
+                </div>
+                <h1 class="profile-name">Ashley Paes</h1>
+                <p class="profile-title">Gerente de Marketing</p>
+                
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/ashley-paes/" target="_blank" class="social-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        </svg>
+                        LinkedIn
+                    </a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Conteúdo Principal -->
+        <main class="main-content">
+            
+            <!-- Sobre Mim -->
+            <section class="about-section">
+                <p>Com uma trajetória sólida em liderança estratégica de Marketing e pré-vendas, contribuo para o alinhamento eficaz entre essas áreas, garantindo que o marketing seja sempre orientado por dados e testes, em sintonia com as necessidades do negócio e dos clientes.</p>
+                <p>Em 7 anos de atuação em empresas B2B, especialmente no setor de tecnologia, me dediquei a aplicar estratégias de growth marketing explorando da aquisição à retenção de clientes, e mais recentemente, na minha atual experiência, tive o desafio de estruturar uma área inteira do zero.</p>
+                <p>Sou motivada por ambientes que valorizam confiança, capricho e protagonismo. Acredito que esses valores são essenciais para um crescimento contínuo e colaborativo.</p>
+            </section>
+
+            <!-- Seção de Cases -->
+            <section id="cases-container">
+                <h2 class="section-title">Casos de Sucesso</h2>
+
+                <!-- CASE 1 -->
+                <div class="case-card">
+                    <div class="case-header">
+                        <h3 class="case-title">Implementação da Estratégia de Inbound Marketing</h3>
+                        <p class="case-objective">Objetivo: Aumentar a representatividade de leads inbound e gerar mais eficiência (2022-2024)</p>
+                    </div>
+                    <div class="case-grid">
+                        <div class="challenge-block">
+                            <h4 class="block-title">Desafio</h4>
+                            <p class="block-text">A empresa enfrentava um alto volume de leads desqualificados, o que resultava em baixa conversão e processos ineficazes. Muitos leads permaneciam em um "limbo" sem reforço de marca nem comunicações estratégicas. Mais de 99% dos MQLs se perdiam ao longo do processo de qualificação, criando forte dependência de relacionamentos do C-Level para fechamento de negócios.</p>
+                        </div>
+                        <div class="solution-block">
+                            <h4 class="block-title">Solução</h4>
+                            <p class="block-text">Mapeamento e revisão completa da jornada do lead (awareness, aquisição, nutrição e qualificação), clareando pontos de contato e oportunidades. Implementação de estratégia de Lead Scoring com base em dados demográficos e relevância de interações. Adoção do funil em Y para integrar inbound e outbound, gerando forte sinergia entre marketing e pré-vendas.</p>
+                        </div>
+                    </div>
+                    <div class="results-highlight-grid">
+                        <div class="result-stat-card">
+                            <div class="result-number">+649%</div>
+                            <div class="result-label">Em receita com origem inbound em 2 anos</div>
+                        </div>
+                        <div class="result-stat-card">
+                            <div class="result-number">67%</div>
+                            <div class="result-label">Representatividade de Inbound na receita YoY (era 26%)</div>
+                        </div>
+                        <div class="result-stat-card">
+                            <div class="result-number">-30%</div>
+                            <div class="result-label">MQLs descartados em média após 4 meses dos ajustes</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CASE 2 -->
+                <div class="case-card">
+                    <div class="case-header">
+                        <h3 class="case-title">Revisão no Processo de Marketing e Pré-Vendas</h3>
+                        <p class="case-objective">Objetivo: Melhorar taxas de conversão para gerar mais reuniões em vendas (2024)</p>
+                    </div>
+                    <div class="case-grid">
+                        <div class="challenge-block">
+                            <h4 class="block-title">Desafio</h4>
+                            <p class="block-text">Em agosto/24, a taxa de conversão de MQL para SQL era de 27,78%, abaixo da média de mercado (40% a 70%). O principal gap ocorria na etapa de prospecção, com a maior parte dos MQLs perdidos devido aos motivos de "não conseguiu contato com o lead" e "lead inválido".</p>
+                        </div>
+                        <div class="solution-block">
+                            <h4 class="block-title">Solução</h4>
+                            <p class="block-text">Ajuste no processo e cadência de SDR, com otimizações finas em campanhas de Ads e formulários:</p>
+                            <ul class="solution-list">
+                                <li>Inclusão de ligações nas cadências de SDR.</li>
+                                <li>Redução drástica no tempo de primeiro contato com o MQL inbound.</li>
+                                <li>Personalização do primeiro contato via ligação unida a mensagem de WhatsApp.</li>
+                                <li>Bloqueio na entrada de leads com provedores de e-mail gratuitos.</li>
+                                <li>Revisão de abordagens, criativos, copies e segmentações das campanhas pagas.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="results-highlight-grid">
+                        <div class="result-stat-card">
+                            <div class="result-number">64%</div>
+                            <div class="result-label">De conversão MQL para SQL após 3 meses de ajustes</div>
+                        </div>
+                        <div class="result-stat-card">
+                            <div class="result-number">-59%</div>
+                            <div class="result-label">Leads perdidos em prospecção frente a outras etapas</div>
+                        </div>
+                        <div class="result-stat-card">
+                            <div class="result-number">-61%</div>
+                            <div class="result-label">No tempo de primeiro contato com o MQL inbound</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CASE 3 -->
+                <div class="case-card">
+                    <div class="case-header">
+                        <h3 class="case-title">Geração de Novas Oportunidades para o Time Comercial</h3>
+                        <p class="case-objective">Objetivo: Aumentar cerca de 85% do volume em 5 meses (2024)</p>
+                    </div>
+                    <div class="case-grid">
+                        <div class="challenge-block">
+                            <h4 class="block-title">Desafio</h4>
+                            <p class="block-text">Em julho/2024 identificou-se que o volume de oportunidades estava muito abaixo da necessidade real de vendas. As principais travas estavam no volume do tráfego orgânico e conversões intermediárias do funil. Foi tomada a decisão estratégica e arrojada de desligar a maior fonte de MQLs anterior e reconstruir os processos do zero para sustentar o crescimento.</p>
+                        </div>
+                        <div class="solution-block">
+                            <h4 class="block-title">Solução</h4>
+                            <p class="block-text">Foco em estruturação estruturada de Geração de Tráfego, Leads e Oportunidades Outbound:</p>
+                            <ul class="solution-list">
+                                <li>Reestruturação completa de campanhas pagas com foco em fundo de funil (BoFu).</li>
+                                <li>Novo mapeamento de palavras-chave eliminando canibalizações de tráfego.</li>
+                                <li>Triplicação da produção e atualização de blogposts semanais para SEO.</li>
+                                <li>Revisão em pontos de conversão, landing pages e formulários mais enxutos.</li>
+                                <li>Implementação pioneira de IAs conversacionais.</li>
+                                <li>Revisão completa da cadência inbound e nova meta diária para outbound.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="results-highlight-grid">
+                        <div class="result-stat-card">
+                            <div class="result-number">102%</div>
+                            <div class="result-label">Da meta global estipulada atingida com sucesso</div>
+                        </div>
+                        <div class="result-stat-card">
+                            <div class="result-number">+429%</div>
+                            <div class="result-label">Aumento relativo, atingindo o melhor mês do ano em volume de oportunidades</div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+        </main>
+    </div>
+
+</body>
+</html>
+
+```
